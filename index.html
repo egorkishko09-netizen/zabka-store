@@ -4,493 +4,162 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111111">
-<meta name="description" content="ZABKA STORE — modern urban streetwear, oversized clothing and everyday essentials.">
+<meta name="theme-color" content="#101010">
+<meta name="description" content="ZABKA STORE — Urban Streetwear">
 <title>ZABKA STORE — Urban Streetwear</title>
 
 <style>
 :root {
-  --bg: #101010;
-  --panel: #191919;
-  --white: #f5f3ef;
-  --muted: #999;
-  --lime: #d6ff35;
-  --line: #303030;
+  --bg:#101010;
+  --panel:#191919;
+  --white:#f5f3ef;
+  --muted:#999;
+  --lime:#d6ff35;
+  --line:#303030;
 }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.topline{background:var(--lime);color:#111;text-align:center;padding:9px;font-size:11px;font-weight:900;letter-spacing:2px}
+header{height:78px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;background:rgba(16,16,16,.97)}
+.logo{font-size:25px;font-weight:1000;letter-spacing:-1px}
+.logo span{color:var(--lime)}
+nav{display:flex;align-items:center;gap:25px}
+nav a{font-size:12px;font-weight:bold;letter-spacing:1px}
+nav a:hover{color:var(--lime)}
+.cart-btn{background:var(--lime);color:#111;padding:13px 18px;border:0;font-weight:900}
+.hero{min-height:550px;display:flex;align-items:center;padding:70px 8%;background:linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.2)),url("https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1800") center 35%/cover}
+.hero-content{max-width:700px}
+.tag{display:inline-block;color:var(--lime);border:1px solid var(--lime);padding:9px 14px;font-size:11px;font-weight:bold;letter-spacing:3px;margin-bottom:24px}
+.hero h1{font-size:clamp(55px,9vw,112px);font-weight:1000;line-height:.88;letter-spacing:-6px}
+.hero h1 span{color:var(--lime)}
+.hero p{margin:25px 0;color:#ddd}
+.main-btn{display:inline-block;padding:17px 27px;background:var(--lime);color:#111;font-size:12px;font-weight:900;letter-spacing:1px;border:0}
+.main-btn:hover{background:white}
+.marquee{overflow:hidden;white-space:nowrap;background:var(--lime);color:#111;padding:15px 0;font-size:15px;font-weight:1000;letter-spacing:3px}
+.marquee div{animation:move 22s linear infinite;width:max-content}
+@keyframes move{to{transform:translateX(-50%)}}
+.section{padding:80px 7%}
+.section-heading{display:flex;align-items:end;justify-content:space-between;margin-bottom:35px;gap:20px}
+.eyebrow{color:var(--lime);font-size:11px;letter-spacing:3px;font-weight:bold;margin-bottom:12px}
+.section h2{font-size:clamp(30px,5vw,48px);letter-spacing:-2px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.filters button{padding:12px 19px;background:transparent;border:1px solid #555;color:white;font-size:11px;font-weight:bold}
+.filters button.active,.filters button:hover{background:var(--lime);border-color:var(--lime);color:#111}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.product{min-width:0;cursor:pointer}
+.product-image{position:relative;background:#222;overflow:hidden}
+.product-image img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .5s}
+.product:hover .product-image img{transform:scale(1.05)}
+.product-label{position:absolute;top:12px;left:12px;background:var(--lime);color:#111;padding:7px 10px;font-size:10px;font-weight:900}
+.product-info{padding:16px 0}
+.product h3{font-size:15px;margin-bottom:9px}
+.product-price{color:var(--lime);font-weight:bold;font-size:15px;margin-bottom:13px}
+.view-btn{width:100%;padding:13px;border:1px solid white;background:transparent;color:white;font-size:11px;font-weight:bold}
+.view-btn:hover{background:var(--lime);border-color:var(--lime);color:#111}
+.promo{margin:20px 7% 80px;padding:75px 8%;background:linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.35)),url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1400") center/cover}
+.promo h2{font-size:clamp(35px,6vw,65px);max-width:600px;line-height:.98;margin-bottom:20px}
+.promo p{color:#ddd;margin-bottom:25px}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:35px}
+.benefit{background:var(--panel);padding:28px;border:1px solid var(--line)}
+.symbol{color:var(--lime);font-size:30px;margin-bottom:18px}
+.benefit h3{margin-bottom:10px}
+.benefit p{color:var(--muted);font-size:13px;line-height:1.6}
+.about{background:#191919;padding:75px 10%;text-align:center}
+.about p{max-width:650px;margin:20px auto 0;color:#aaa;line-height:1.8}
+footer{padding:40px 7%;border-top:1px solid var(--line)}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer p{color:#888;font-size:12px;margin-top:12px}
+.footer-links{display:flex;gap:20px;font-size:12px}
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* PRODUCT PAGE */
+#productPage{display:none;padding:35px 7% 80px}
+.back-btn{background:transparent;border:0;color:var(--lime);font-weight:bold;margin-bottom:30px;font-size:13px}
+.detail-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:start}
+.gallery-main{background:#202020}
+.gallery-main img{width:100%;height:600px;object-fit:cover;display:block}
+.thumbnails{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.thumbnails button{border:2px solid transparent;background:#222;padding:0}
+.thumbnails button.selected{border-color:var(--lime)}
+.thumbnails img{width:100%;height:110px;object-fit:cover;display:block}
+.detail-info{padding-top:15px}
+.detail-label{color:var(--lime);font-size:11px;letter-spacing:3px;font-weight:bold;margin-bottom:15px}
+.detail-info h1{font-size:clamp(30px,4vw,48px);line-height:1.05;margin-bottom:15px}
+.detail-price{font-size:25px;color:var(--lime);font-weight:bold;margin-bottom:25px}
+.detail-description{color:#aaa;font-size:14px;line-height:1.8;margin-bottom:28px}
+.option-title{font-size:12px;font-weight:bold;letter-spacing:1px;margin:22px 0 12px}
+.color-options{display:flex;gap:12px;flex-wrap:wrap}
+.color-choice{background:#222;color:white;border:1px solid #555;padding:10px 14px;font-size:12px}
+.color-choice.selected{border:2px solid var(--lime);color:var(--lime)}
+.size-options{display:flex;gap:9px;flex-wrap:wrap}
+.size-choice{width:48px;height:45px;background:#222;border:1px solid #555;color:white;font-weight:bold}
+.size-choice.selected{background:var(--lime);border-color:var(--lime);color:#111}
+.quantity-row{display:flex;align-items:center;gap:15px;margin:25px 0}
+.quantity-row button{width:38px;height:38px;background:#222;color:white;border:1px solid #555;font-size:19px}
+.quantity-row span{min-width:20px;text-align:center}
+.detail-add{width:100%;padding:18px;background:var(--lime);border:0;color:#111;font-weight:1000;letter-spacing:1px}
+.detail-add:hover{background:white}
+.specs{border-top:1px solid #444;margin-top:30px;padding-top:20px;color:#aaa;font-size:13px;line-height:2}
+.specs strong{color:white}
+#homeView{display:block}
+
+/* CART */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:29;display:none}
+.cart{position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:#171717;z-index:30;padding:28px;transform:translateX(100%);transition:.3s;overflow-y:auto}
+.cart.open{transform:translateX(0)}
+.cart-overlay.open{display:block}
+.cart-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}
+.cart-head button{background:none;color:white;border:0;font-size:28px}
+.cart-item{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #444;padding:16px 0;font-size:13px}
+.cart-item button{background:none;border:0;color:var(--lime);margin-top:7px;font-size:11px}
+.total{margin-top:25px;display:flex;justify-content:space-between;font-weight:bold;font-size:18px}
+.demo-note{color:#888;font-size:11px;line-height:1.5;margin-top:25px}
+.cart-thumb{width:58px;height:70px;object-fit:cover}
+.cart-product{display:flex;gap:12px}
+@media(max-width:900px){
+ .products{grid-template-columns:repeat(2,1fr)}
+ .benefits{grid-template-columns:1fr}
+ .detail-layout{grid-template-columns:1fr;gap:30px}
+ .gallery-main img{height:500px}
 }
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg);
-  color: var(--white);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-a { color: inherit; text-decoration: none; }
-button { font: inherit; }
-
-.topline {
-  background: var(--lime);
-  color: #111;
-  text-align: center;
-  padding: 9px;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 2px;
-}
-
-header {
-  height: 78px;
-  padding: 0 6%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--line);
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(16,16,16,.96);
-}
-
-.logo {
-  font-size: 25px;
-  font-weight: 1000;
-  letter-spacing: -1px;
-}
-
-.logo span { color: var(--lime); }
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
-nav a {
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-nav a:hover { color: var(--lime); }
-
-.cart-btn {
-  background: var(--lime);
-  color: #111;
-  padding: 13px 18px;
-  border: none;
-  font-weight: 900;
-  cursor: pointer;
-}
-
-.hero {
-  min-height: 570px;
-  display: flex;
-  align-items: center;
-  padding: 70px 8%;
-  position: relative;
-  background:
-    linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.2)),
-    url("https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1800")
-    center 35%/cover;
-}
-
-.hero-content { max-width: 700px; }
-
-.tag {
-  display: inline-block;
-  color: var(--lime);
-  border: 1px solid var(--lime);
-  padding: 9px 14px;
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 3px;
-  margin-bottom: 24px;
-}
-
-.hero h1 {
-  font-size: clamp(55px,9vw,112px);
-  font-weight: 1000;
-  line-height: .88;
-  letter-spacing: -6px;
-}
-
-.hero h1 span {
-  color: var(--lime);
-}
-
-.hero p {
-  margin: 25px 0;
-  color: #ddd;
-  font-size: 16px;
-}
-
-.main-btn {
-  display: inline-block;
-  padding: 17px 27px;
-  background: var(--lime);
-  color: #111;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  transition: .2s;
-}
-
-.main-btn:hover {
-  background: white;
-  transform: translateY(-3px);
-}
-
-.marquee {
-  overflow: hidden;
-  white-space: nowrap;
-  background: var(--lime);
-  color: #111;
-  padding: 15px 0;
-  font-size: 15px;
-  font-weight: 1000;
-  letter-spacing: 3px;
-}
-
-.marquee div {
-  animation: move 22s linear infinite;
-  width: max-content;
-}
-
-@keyframes move {
-  to { transform: translateX(-50%); }
-}
-
-.section {
-  padding: 85px 7%;
-}
-
-.section-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  margin-bottom: 35px;
-  gap: 20px;
-}
-
-.eyebrow {
-  color: var(--lime);
-  font-size: 11px;
-  letter-spacing: 3px;
-  font-weight: bold;
-  margin-bottom: 12px;
-}
-
-.section h2 {
-  font-size: clamp(30px,5vw,48px);
-  letter-spacing: -2px;
-}
-
-.filters {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-}
-
-.filters button {
-  padding: 12px 19px;
-  background: transparent;
-  border: 1px solid #555;
-  color: white;
-  font-size: 11px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.filters button.active,
-.filters button:hover {
-  background: var(--lime);
-  border-color: var(--lime);
-  color: #111;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 22px;
-}
-
-.product { min-width: 0; }
-
-.product-image {
-  position: relative;
-  background: #222;
-  overflow: hidden;
-}
-
-.product-image img {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  display: block;
-  transition: transform .5s;
-}
-
-.product:hover .product-image img {
-  transform: scale(1.06);
-}
-
-.product-label {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: var(--lime);
-  color: #111;
-  padding: 7px 10px;
-  font-size: 10px;
-  font-weight: 900;
-}
-
-.product-info {
-  padding: 16px 0;
-}
-
-.product h3 {
-  font-size: 15px;
-  margin-bottom: 9px;
-}
-
-.product-price {
-  color: var(--lime);
-  font-weight: bold;
-  font-size: 15px;
-  margin-bottom: 13px;
-}
-
-.product select {
-  width: 100%;
-  padding: 12px;
-  background: #222;
-  border: 1px solid #444;
-  color: white;
-  margin-bottom: 10px;
-}
-
-.add-btn {
-  width: 100%;
-  padding: 13px;
-  border: 1px solid white;
-  background: transparent;
-  color: white;
-  font-size: 11px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.add-btn:hover {
-  background: var(--lime);
-  border-color: var(--lime);
-  color: #111;
-}
-
-.promo {
-  margin: 20px 7% 80px;
-  padding: 75px 8%;
-  background:
-    linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.35)),
-    url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1400")
-    center/cover;
-}
-
-.promo h2 {
-  font-size: clamp(35px,6vw,65px);
-  max-width: 600px;
-  line-height: .98;
-  margin-bottom: 20px;
-}
-
-.promo p {
-  color: #ddd;
-  margin-bottom: 25px;
-}
-
-.benefits {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 20px;
-  margin-top: 35px;
-}
-
-.benefit {
-  background: var(--panel);
-  padding: 28px;
-  border: 1px solid var(--line);
-}
-
-.benefit .symbol {
-  color: var(--lime);
-  font-size: 30px;
-  margin-bottom: 18px;
-}
-
-.benefit h3 { margin-bottom: 10px; }
-.benefit p { color: var(--muted); font-size: 13px; line-height: 1.6; }
-
-.about {
-  background: #191919;
-  padding: 75px 10%;
-  text-align: center;
-}
-
-.about p {
-  max-width: 650px;
-  margin: 20px auto 0;
-  color: #aaa;
-  line-height: 1.8;
-}
-
-footer {
-  padding: 40px 7%;
-  border-top: 1px solid var(--line);
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-footer p {
-  color: #888;
-  font-size: 12px;
-  margin-top: 12px;
-}
-
-.footer-links {
-  display: flex;
-  gap: 20px;
-  font-size: 12px;
-}
-
-.cart-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.65);
-  z-index: 29;
-  display: none;
-}
-
-.cart {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: min(420px,100%);
-  background: #171717;
-  z-index: 30;
-  padding: 28px;
-  transform: translateX(100%);
-  transition: .3s;
-  overflow-y: auto;
-}
-
-.cart.open { transform: translateX(0); }
-
-.cart-overlay.open { display: block; }
-
-.cart-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-.cart-head button {
-  background: none;
-  color: white;
-  border: none;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  border-bottom: 1px solid #444;
-  padding: 16px 0;
-  font-size: 13px;
-}
-
-.cart-item button {
-  background: none;
-  border: none;
-  color: var(--lime);
-  cursor: pointer;
-  margin-top: 7px;
-  font-size: 11px;
-}
-
-.total {
-  margin-top: 25px;
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.demo-note {
-  color: #888;
-  font-size: 11px;
-  line-height: 1.5;
-  margin-top: 25px;
-}
-
-@media(max-width:900px) {
-  .products { grid-template-columns: repeat(2,1fr); }
-  .benefits { grid-template-columns: 1fr; }
-}
-
-@media(max-width:600px) {
-  header { padding: 0 4%; height: 68px; }
-  .logo { font-size: 19px; }
-  nav { gap: 12px; }
-  nav a { font-size: 10px; }
-  .cart-btn { padding: 10px; font-size: 10px; }
-  .hero { min-height: 470px; padding: 55px 6%; }
-  .hero h1 { letter-spacing: -3px; }
-  .section { padding: 60px 5%; }
-  .products { gap: 13px; }
-  .product h3 { font-size: 13px; }
-  .product-info { padding: 12px 0; }
-  .filters button { padding: 10px 12px; }
-  .promo { margin: 0 5% 55px; padding: 55px 7%; }
-  .about { padding: 60px 7%; }
+@media(max-width:600px){
+ header{padding:0 4%;height:68px}
+ .logo{font-size:19px}
+ nav{gap:10px}
+ nav a{font-size:10px}
+ .cart-btn{padding:10px;font-size:10px}
+ .hero{min-height:450px;padding:55px 6%}
+ .hero h1{letter-spacing:-3px}
+ .section{padding:55px 5%}
+ .products{gap:13px}
+ .product h3{font-size:13px}
+ .product-info{padding:12px 0}
+ .filters button{padding:10px 12px}
+ .promo{margin:0 5% 55px;padding:55px 7%}
+ .about{padding:60px 7%}
+ #productPage{padding:25px 5% 60px}
+ .gallery-main img{height:430px}
+ .thumbnails img{height:75px}
+ .detail-info h1{font-size:32px}
 }
 </style>
 </head>
 
 <body>
-
-<div class="topline">
-  ZABKA STORE — STREETWEAR FOR THE NEXT GENERATION
-</div>
+<div class="topline">ZABKA STORE — STREETWEAR FOR THE NEXT GENERATION</div>
 
 <header>
-  <a class="logo" href="#">ZABKA<span>.</span> STORE</a>
-
+  <a class="logo" href="#" onclick="showHome();return false">ZABKA<span>.</span> STORE</a>
   <nav>
-    <a href="#shop">SHOP</a>
-    <a href="#about">ABOUT</a>
-    <button class="cart-btn" onclick="openCart()">
-      CART (<span id="count">0</span>)
-    </button>
+    <a href="#shop" onclick="showHome()">SHOP</a>
+    <a href="#about" onclick="showHome()">ABOUT</a>
+    <button class="cart-btn" onclick="openCart()">CART (<span id="count">0</span>)</button>
   </nav>
 </header>
 
+<div id="homeView">
 <section class="hero">
   <div class="hero-content">
     <div class="tag">NEW DROP / 2026</div>
@@ -500,22 +169,16 @@ footer p {
   </div>
 </section>
 
-<div class="marquee">
-  <div>
-    STREET CULTURE ✳ OVERSIZED FIT ✳ NEW ENERGY ✳
-    STREET CULTURE ✳ OVERSIZED FIT ✳ NEW ENERGY ✳
-  </div>
-</div>
+<div class="marquee"><div>
+  STREET CULTURE ✳ OVERSIZED FIT ✳ NEW ENERGY ✳
+  STREET CULTURE ✳ OVERSIZED FIT ✳ NEW ENERGY ✳
+</div></div>
 
 <section class="section" id="shop">
   <div class="section-heading">
-    <div>
-      <div class="eyebrow">FRESH FROM THE STREETS</div>
-      <h2>NEW COLLECTION.</h2>
-    </div>
+    <div><div class="eyebrow">FRESH FROM THE STREETS</div><h2>NEW COLLECTION.</h2></div>
     <div class="eyebrow">DROP 001 / 2026</div>
   </div>
-
   <div class="filters">
     <button class="active" onclick="filterProducts('all',this)">ALL</button>
     <button onclick="filterProducts('hoodies',this)">HOODIES</button>
@@ -524,125 +187,7 @@ footer p {
     <button onclick="filterProducts('jackets',this)">JACKETS</button>
     <button onclick="filterProducts('accessories',this)">ACCESSORIES</button>
   </div>
-
-  <div class="products">
-
-    <article class="product" data-category="hoodies">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=700" alt="Oversized hoodie">
-        <span class="product-label">BESTSELLER</span>
-      </div>
-      <div class="product-info">
-        <h3>Essential Oversized Hoodie</h3>
-        <div class="product-price">€49.90</div>
-        <select class="size">
-          <option>S</option><option>M</option><option>L</option><option>XL</option>
-        </select>
-        <button class="add-btn" onclick="addProduct(this,'Essential Oversized Hoodie',49.90)">ADD TO CART +</button>
-      </div>
-    </article>
-
-    <article class="product" data-category="tshirts">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700" alt="Oversized t-shirt">
-        <span class="product-label">NEW</span>
-      </div>
-      <div class="product-info">
-        <h3>Basic Oversized Tee</h3>
-        <div class="product-price">€24.90</div>
-        <select class="size">
-          <option>S</option><option>M</option><option>L</option><option>XL</option>
-        </select>
-        <button class="add-btn" onclick="addProduct(this,'Basic Oversized Tee',24.90)">ADD TO CART +</button>
-      </div>
-    </article>
-
-    <article class="product" data-category="pants">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1517438476312-10d79c077509?w=700" alt="Urban pants">
-      </div>
-      <div class="product-info">
-        <h3>Urban Cargo Pants</h3>
-        <div class="product-price">€44.90</div>
-        <select class="size">
-          <option>S</option><option>M</option><option>L</option><option>XL</option>
-        </select>
-        <button class="add-btn" onclick="addProduct(this,'Urban Cargo Pants',44.90)">ADD TO CART +</button>
-      </div>
-    </article>
-
-    <article class="product" data-category="accessories">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=700" alt="Baseball cap">
-      </div>
-      <div class="product-info">
-        <h3>Classic Urban Cap</h3>
-        <div class="product-price">€19.90</div>
-        <select class="size">
-          <option>One Size</option>
-        </select>
-        <button class="add-btn" onclick="addProduct(this,'Classic Urban Cap',19.90)">ADD TO CART +</button>
-      </div>
-    </article>
-
-    <article class="product" data-category="jackets">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=700" alt="Streetwear jacket">
-        <span class="product-label">TRENDING</span>
-      </div>
-      <div class="product-info">
-        <h3>Urban Street Jacket</h3>
-        <div class="product-price">€69.90</div>
-        <select class="size">
-          <option>S</option><option>M</option><option>L</option><option>XL</option>
-        </select>
-        <button class="add-btn" onclick="addProduct(this,'Urban Street Jacket',69.90)">ADD TO CART +</button>
-      </div>
-    </article>
-
-    <article class="product" data-category="hoodies">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1578681994506-b8f463449011?w=700" alt="Casual hoodie">
-      </div>
-      <div class="product-info">
-        <h3>Daily Comfort Hoodie</h3>
-        <div class="product-price">€54.90</div>
-        <select class="size">
-          <option>S</option><option>M</option><option>L</option><option>XL</option>
-        </select>
-        <button class="add-btn" onclick="addProduct(this,'Daily Comfort Hoodie',54.90)">ADD TO CART +</button>
-      </div>
-    </article>
-
-    <article class="product" data-category="tshirts">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=700" alt="Fashion t-shirt">
-      </div>
-      <div class="product-info">
-        <h3>Street Graphic Tee</h3>
-        <div class="product-price">€29.90</div>
-        <select class="size">
-          <option>S</option><option>M</option><option>L</option><option>XL</option>
-        </select>
-        <button class="add-btn" onclick="addProduct(this,'Street Graphic Tee',29.90)">ADD TO CART +</button>
-      </div>
-    </article>
-
-    <article class="product" data-category="accessories">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?w=700" alt="Streetwear accessory">
-      </div>
-      <div class="product-info">
-        <h3>Everyday Cap</h3>
-        <div class="product-price">€22.90</div>
-        <select class="size">
-          <option>One Size</option>
-        </select>
-        <button class="add-btn" onclick="addProduct(this,'Everyday Cap',22.90)">ADD TO CART +</button>
-      </div>
-    </article>
-
-  </div>
+  <div class="products" id="products"></div>
 </section>
 
 <section class="promo">
@@ -655,155 +200,348 @@ footer p {
 <section class="section">
   <div class="eyebrow">WHY ZABKA STORE?</div>
   <h2>MADE FOR YOUR VIBE.</h2>
-
   <div class="benefits">
-    <div class="benefit">
-      <div class="symbol">✳</div>
-      <h3>YOUR STYLE</h3>
-      <p>Modern silhouettes and street-inspired looks.</p>
-    </div>
-
-    <div class="benefit">
-      <div class="symbol">↗</div>
-      <h3>EVERYDAY COMFORT</h3>
-      <p>Relaxed fits made for everyday outfits.</p>
-    </div>
-
-    <div class="benefit">
-      <div class="symbol">★</div>
-      <h3>FRESH ENERGY</h3>
-      <p>Find your own look and express yourself.</p>
-    </div>
+    <div class="benefit"><div class="symbol">✳</div><h3>YOUR STYLE</h3><p>Modern silhouettes and street-inspired looks.</p></div>
+    <div class="benefit"><div class="symbol">↗</div><h3>EVERYDAY COMFORT</h3><p>Relaxed fits made for everyday outfits.</p></div>
+    <div class="benefit"><div class="symbol">★</div><h3>FRESH ENERGY</h3><p>Find your own look and express yourself.</p></div>
   </div>
 </section>
 
 <section class="about" id="about">
   <div class="eyebrow">THE ZABKA ATTITUDE</div>
   <h2>MORE THAN CLOTHES.</h2>
-  <p>
-    ZABKA STORE is a streetwear concept for people
-    who love oversized silhouettes, urban culture
-    and individual style. Wear what feels like you.
-  </p>
+  <p>ZABKA STORE is a streetwear concept for people who love oversized silhouettes, urban culture and individual style. Wear what feels like you.</p>
+</section>
+</div>
+
+<!-- Отдельная страница товара -->
+<section id="productPage">
+  <button class="back-btn" onclick="showHome()">← BACK TO SHOP</button>
+  <div id="productDetails"></div>
 </section>
 
 <footer>
   <div class="footer-inner">
-    <div>
-      <div class="logo">ZABKA<span>.</span> STORE</div>
-      <p>STREETWEAR FOR THE NEXT GENERATION.</p>
-    </div>
-    <div class="footer-links">
-      <a href="#shop">SHOP</a>
-      <a href="#about">ABOUT</a>
-    </div>
+    <div><div class="logo">ZABKA<span>.</span> STORE</div><p>STREETWEAR FOR THE NEXT GENERATION.</p></div>
+    <div class="footer-links"><a href="#shop" onclick="showHome()">SHOP</a><a href="#about" onclick="showHome()">ABOUT</a></div>
   </div>
   <p style="margin-top:30px">© 2026 ZABKA STORE — DEMONSTRATION WEBSITE</p>
 </footer>
 
 <div class="cart-overlay" id="overlay" onclick="closeCart()"></div>
-
 <aside class="cart" id="cart">
-  <div class="cart-head">
-    <h2>YOUR CART (<span id="cartCount">0</span>)</h2>
-    <button onclick="closeCart()">×</button>
-  </div>
-
+  <div class="cart-head"><h2>YOUR CART (<span id="cartCount">0</span>)</h2><button onclick="closeCart()">×</button></div>
   <div id="cartItems">Your cart is empty.</div>
-
-  <div class="total">
-    <span>TOTAL</span>
-    <span id="total">€0.00</span>
-  </div>
-
-  <p class="demo-note">
-    DEMONSTRATION ONLY. Prices and products are examples.
-    No real orders or payments are processed.
-  </p>
+  <div class="total"><span>TOTAL</span><span id="total">€0.00</span></div>
+  <p class="demo-note">DEMONSTRATION ONLY. Products and prices are examples. No real orders or payments are processed.</p>
 </aside>
 
 <script>
-let cart = [];
+const products = [
+{
+ id:"hoodie",name:"Essential Oversized Hoodie",category:"hoodies",price:49.90,label:"BESTSELLER",
+ description:"A relaxed oversized hoodie designed for everyday streetwear. Comfortable fit and clean urban look.",
+ colors:["Black","Grey","White"],sizes:["S","M","L","XL","XXL"],
+ images:[
+ "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=900",
+ "https://images.unsplash.com/photo-1578681994506-b8f463449011?w=900",
+ "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=900&sat=-100",
+ "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=900&fit=crop"
+ ]
+},
+{
+ id:"tee",name:"Basic Oversized Tee",category:"tshirts",price:24.90,label:"NEW",
+ description:"A relaxed everyday oversized T-shirt. Easy to style with jeans, cargos and sneakers.",
+ colors:["White","Black","Grey"],sizes:["S","M","L","XL","XXL"],
+ images:[
+ "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=900",
+ "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=900",
+ "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=900&sat=-100",
+ "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=900&fit=crop"
+ ]
+},
+{
+ id:"cargo",name:"Urban Cargo Pants",category:"pants",price:44.90,
+ description:"Urban-inspired cargo trousers with a relaxed silhouette. Made for everyday outfits.",
+ colors:["Black","Olive","Grey"],sizes:["S","M","L","XL"],
+ images:[
+ "https://images.unsplash.com/photo-1517438476312-10d79c077509?w=900",
+ "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=900",
+ "https://images.unsplash.com/photo-1517438476312-10d79c077509?w=900&sat=-100",
+ "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=900&fit=crop"
+ ]
+},
+{
+ id:"cap",name:"Classic Urban Cap",category:"accessories",price:19.90,
+ description:"A clean everyday cap to complete your streetwear look.",
+ colors:["Black","White","Beige"],sizes:["One Size"],
+ images:[
+ "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=900",
+ "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=900",
+ "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=900&sat=-100",
+ "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=900&fit=crop"
+ ]
+},
+{
+ id:"jacket",name:"Urban Street Jacket",category:"jackets",price:69.90,label:"TRENDING",
+ description:"A statement streetwear jacket with a versatile urban-inspired look.",
+ colors:["Black","Brown","Grey"],sizes:["S","M","L","XL"],
+ images:[
+ "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=900",
+ "https://images.unsplash.com/photo-1544923246-77307dd654cb?w=900",
+ "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=900&sat=-100",
+ "https://images.unsplash.com/photo-1544923246-77307dd654cb?w=900&fit=crop"
+ ]
+},
+{
+ id:"hoodie2",name:"Daily Comfort Hoodie",category:"hoodies",price:54.90,
+ description:"A soft casual hoodie with an easy oversized shape and everyday comfort.",
+ colors:["Grey","Black","Cream"],sizes:["S","M","L","XL","XXL"],
+ images:[
+ "https://images.unsplash.com/photo-1578681994506-b8f463449011?w=900",
+ "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=900",
+ "https://images.unsplash.com/photo-1578681994506-b8f463449011?w=900&sat=-100",
+ "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=900&fit=crop"
+ ]
+},
+{
+ id:"graphic",name:"Street Graphic Tee",category:"tshirts",price:29.90,
+ description:"A graphic-inspired streetwear T-shirt for relaxed everyday outfits.",
+ colors:["White","Black","Sand"],sizes:["S","M","L","XL"],
+ images:[
+ "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=900",
+ "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=900",
+ "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=900&sat=-100",
+ "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=900&fit=crop"
+ ]
+},
+{
+ id:"cap2",name:"Everyday Cap",category:"accessories",price:22.90,
+ description:"A versatile cap that adds a finishing touch to your everyday look.",
+ colors:["Black","Navy","Beige"],sizes:["One Size"],
+ images:[
+ "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=900",
+ "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=900",
+ "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=900&sat=-100",
+ "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=900&fit=crop"
+ ]
+}
+];
 
-function addProduct(button, name, price) {
-  const size = button.parentElement.querySelector(".size").value;
+let cart=[];
+let selectedProduct=null;
+let selectedSize="";
+let selectedColor="";
+let quantity=1;
+let currentImage=0;
 
-  cart.push({name, price, size});
-  updateCart();
-
-  button.textContent = "ADDED ✓";
-  setTimeout(() => button.textContent = "ADD TO CART +", 1200);
+function renderProducts(category="all"){
+ const container=document.getElementById("products");
+ container.innerHTML="";
+ products.filter(p=>category==="all"||p.category===category).forEach(p=>{
+  const card=document.createElement("article");
+  card.className="product";
+  card.onclick=()=>openProduct(p.id);
+  card.innerHTML=`
+   <div class="product-image">
+    <img src="${p.images[0]}" alt="${p.name}">
+    ${p.label?`<span class="product-label">${p.label}</span>`:""}
+   </div>
+   <div class="product-info">
+    <h3>${p.name}</h3>
+    <div class="product-price">€${p.price.toFixed(2)}</div>
+    <button class="view-btn" type="button">VIEW PRODUCT →</button>
+   </div>`;
+  container.appendChild(card);
+ });
 }
 
-function updateCart() {
-  const count = cart.length;
-  const total = cart.reduce((sum, item) => sum + item.price, 0);
-
-  document.getElementById("count").textContent = count;
-  document.getElementById("cartCount").textContent = count;
-  document.getElementById("total").textContent = "€" + total.toFixed(2);
-
-  const container = document.getElementById("cartItems");
-
-  if (!count) {
-    container.textContent = "Your cart is empty.";
-    return;
-  }
-
-  container.innerHTML = "";
-
-  cart.forEach((item, index) => {
-    const row = document.createElement("div");
-    row.className = "cart-item";
-
-    const details = document.createElement("div");
-    const name = document.createElement("strong");
-    name.textContent = item.name;
-
-    const size = document.createElement("div");
-    size.textContent = "Size: " + item.size + " · €" + item.price.toFixed(2);
-
-    const remove = document.createElement("button");
-    remove.textContent = "REMOVE";
-    remove.onclick = () => {
-      cart.splice(index, 1);
-      updateCart();
-    };
-
-    details.append(name, size, remove);
-
-    const price = document.createElement("span");
-    price.textContent = "€" + item.price.toFixed(2);
-
-    row.append(details, price);
-    container.appendChild(row);
-  });
+function filterProducts(category,button){
+ document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+ button.classList.add("active");
+ renderProducts(category);
 }
 
-function openCart() {
-  document.getElementById("cart").classList.add("open");
-  document.getElementById("overlay").classList.add("open");
+function openProduct(id,updateHistory=true){
+ const p=products.find(item=>item.id===id);
+ if(!p)return;
+ selectedProduct=p;
+ selectedSize=p.sizes[0];
+ selectedColor=p.colors[0];
+ quantity=1;
+ currentImage=0;
+
+ if(updateHistory){
+  history.pushState({product:id},"","?product="+id);
+ }
+ renderProductPage();
 }
 
-function closeCart() {
-  document.getElementById("cart").classList.remove("open");
-  document.getElementById("overlay").classList.remove("open");
+function renderProductPage(){
+ const p=selectedProduct;
+ if(!p)return;
+ document.getElementById("homeView").style.display="none";
+ document.getElementById("productPage").style.display="block";
+ const details=document.getElementById("productDetails");
+
+ details.innerHTML=`
+ <div class="detail-layout">
+  <div class="gallery">
+   <div class="gallery-main">
+    <img id="mainProductImage" src="${p.images[currentImage]}" alt="${p.name}">
+   </div>
+   <div class="thumbnails">
+    ${p.images.map((img,i)=>`
+     <button class="${i===currentImage?"selected":""}" onclick="changeImage(${i})">
+      <img src="${img}" alt="Product view ${i+1}">
+     </button>`).join("")}
+   </div>
+  </div>
+  <div class="detail-info">
+   <div class="detail-label">ZABKA STORE / COLLECTION 2026</div>
+   <h1>${p.name}</h1>
+   <div class="detail-price">€${p.price.toFixed(2)}</div>
+   <p class="detail-description">${p.description}</p>
+
+   <div class="option-title">SELECT COLOR: <span id="chosenColor">${selectedColor}</span></div>
+   <div class="color-options">
+    ${p.colors.map((color,i)=>`
+     <button class="color-choice ${i===0?"selected":""}" onclick="chooseColor('${color}',this)">${color}</button>
+    `).join("")}
+   </div>
+
+   <div class="option-title">SELECT SIZE: <span id="chosenSize">${selectedSize}</span></div>
+   <div class="size-options">
+    ${p.sizes.map((size,i)=>`
+     <button class="size-choice ${i===0?"selected":""}" onclick="chooseSize('${size}',this)">${size}</button>
+    `).join("")}
+   </div>
+
+   <div class="quantity-row">
+    <strong>QUANTITY</strong>
+    <button onclick="changeQuantity(-1)">−</button>
+    <span id="quantityValue">1</span>
+    <button onclick="changeQuantity(1)">+</button>
+   </div>
+
+   <button class="detail-add" onclick="addDetailToCart()">ADD TO CART — €${p.price.toFixed(2)}</button>
+
+   <div class="specs">
+    <strong>PRODUCT DETAILS</strong><br>
+    Style: Urban / Streetwear<br>
+    Fit: Relaxed / Oversized<br>
+    Available sizes: ${p.sizes.join(", ")}<br>
+    Available colors: ${p.colors.join(", ")}<br>
+    <span style="color:#888">Sample product information for demonstration.</span>
+   </div>
+  </div>
+ </div>`;
+ window.scrollTo(0,0);
 }
 
-function filterProducts(category, button) {
-  document.querySelectorAll(".filters button").forEach(btn => {
-    btn.classList.remove("active");
-  });
-
-  button.classList.add("active");
-
-  document.querySelectorAll(".product").forEach(product => {
-    product.style.display =
-      category === "all" || product.dataset.category === category
-      ? "block" : "none";
-  });
+function changeImage(index){
+ currentImage=index;
+ document.getElementById("mainProductImage").src=selectedProduct.images[index];
+ document.querySelectorAll(".thumbnails button").forEach((b,i)=>b.classList.toggle("selected",i===index));
 }
+
+function chooseSize(size,button){
+ selectedSize=size;
+ document.getElementById("chosenSize").textContent=size;
+ document.querySelectorAll(".size-choice").forEach(b=>b.classList.remove("selected"));
+ button.classList.add("selected");
+}
+
+function chooseColor(color,button){
+ selectedColor=color;
+ document.getElementById("chosenColor").textContent=color;
+ document.querySelectorAll(".color-choice").forEach(b=>b.classList.remove("selected"));
+ button.classList.add("selected");
+}
+
+function changeQuantity(amount){
+ quantity=Math.max(1,Math.min(10,quantity+amount));
+ document.getElementById("quantityValue").textContent=quantity;
+}
+
+function addDetailToCart(){
+ const p=selectedProduct;
+ for(let i=0;i<quantity;i++){
+  cart.push({id:p.id,name:p.name,price:p.price,size:selectedSize,color:selectedColor,image:p.images[0]});
+ }
+ updateCart();
+ const btn=document.querySelector(".detail-add");
+ btn.textContent="ADDED TO CART ✓";
+ setTimeout(()=>btn.textContent="ADD TO CART — €"+p.price.toFixed(2),1300);
+}
+
+function showHome(updateHistory=true){
+ document.getElementById("productPage").style.display="none";
+ document.getElementById("homeView").style.display="block";
+ selectedProduct=null;
+ if(updateHistory)history.pushState({home:true},"",location.pathname);
+ window.scrollTo(0,0);
+}
+
+function updateCart(){
+ const count=cart.length;
+ const total=cart.reduce((sum,item)=>sum+item.price,0);
+ document.getElementById("count").textContent=count;
+ document.getElementById("cartCount").textContent=count;
+ document.getElementById("total").textContent="€"+total.toFixed(2);
+ const container=document.getElementById("cartItems");
+
+ if(!count){container.textContent="Your cart is empty.";return;}
+ container.innerHTML="";
+
+ cart.forEach((item,index)=>{
+  const row=document.createElement("div");
+  row.className="cart-item";
+  const details=document.createElement("div");
+  details.className="cart-product";
+  const img=document.createElement("img");
+  img.className="cart-thumb";
+  img.src=item.image;
+  img.alt=item.name;
+  const info=document.createElement("div");
+  const name=document.createElement("strong");
+  name.textContent=item.name;
+  const variation=document.createElement("div");
+  variation.textContent="Size: "+item.size+" · Color: "+item.color;
+  const price=document.createElement("div");
+  price.textContent="€"+item.price.toFixed(2);
+  const remove=document.createElement("button");
+  remove.textContent="REMOVE";
+  remove.onclick=()=>{cart.splice(index,1);updateCart();};
+  info.append(name,variation,price,remove);
+  details.append(img,info);
+  row.append(details);
+  container.appendChild(row);
+ });
+}
+
+function openCart(){
+ document.getElementById("cart").classList.add("open");
+ document.getElementById("overlay").classList.add("open");
+}
+function closeCart(){
+ document.getElementById("cart").classList.remove("open");
+ document.getElementById("overlay").classList.remove("open");
+}
+
+window.addEventListener("popstate",()=>{
+ const id=new URLSearchParams(location.search).get("product");
+ if(id){
+  openProduct(id,false);
+ }else{
+  showHome(false);
+ }
+});
+
+renderProducts();
+
+const initialProduct=new URLSearchParams(location.search).get("product");
+if(initialProduct)openProduct(initialProduct,false);
 </script>
-
 </body>
 </html>
