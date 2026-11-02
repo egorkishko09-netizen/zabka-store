@@ -1,18 +1,18 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111111">
-<meta name="description" content="ZABKA STORE — urban streetwear, oversized clothing and everyday essentials.">
-<title>ZABKA STORE — Own Your Vibe</title>
+<meta name="theme-color" content="#101010">
+<meta name="description" content="ZABKA STORE — уличная одежда, оверсайз и молодёжный стиль.">
+<title>ZABKA STORE — NO RULES. JUST STREET.</title>
 
 <style>
 :root {
   --bg:#101010;
   --panel:#191919;
-  --panel2:#222;
+  --panel2:#252525;
   --text:#f5f5f5;
   --muted:#999;
   --lime:#c8ff00;
@@ -29,9 +29,11 @@ button{cursor:pointer}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 .container{width:min(1180px,92%);margin:auto}
+
 header{
-  position:sticky;top:0;z-index:20;background:#101010ee;
-  backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:20;
+  background:#101010ee;backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
 }
 .nav{
   min-height:76px;display:flex;align-items:center;
@@ -39,7 +41,10 @@ header{
 }
 .logo{font-size:25px;font-weight:1000;letter-spacing:-1.5px}
 .logo span{color:var(--lime)}
-.nav-links{display:flex;gap:25px;font-size:13px;text-transform:uppercase;font-weight:700}
+.nav-links{
+  display:flex;gap:25px;font-size:13px;
+  text-transform:uppercase;font-weight:700;
+}
 .nav-links a:hover{color:var(--lime)}
 .nav-actions{display:flex;align-items:center;gap:10px}
 .icon-btn{
@@ -48,19 +53,43 @@ header{
 }
 .icon-btn:hover{border-color:var(--lime);color:var(--lime)}
 .count{color:var(--lime);font-weight:800}
+
+/* Главный экран */
 .hero{
-  min-height:490px;display:flex;align-items:center;
+  min-height:510px;display:flex;align-items:center;
+  position:relative;overflow:hidden;
   background:
-  linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.15)),
-  url("https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1800&q=85")
-  center/cover;
+    radial-gradient(ellipse at 80% 40%,#303a0b 0%,transparent 35%),
+    linear-gradient(120deg,#111 0%,#1d1d1d 55%,#101010 100%);
   border-bottom:1px solid var(--line);
 }
-.hero-content{padding:75px 0;max-width:650px}
-.eyebrow{color:var(--lime);font-size:12px;font-weight:900;letter-spacing:3px;text-transform:uppercase}
-.hero h1{font-size:clamp(52px,9vw,100px);line-height:.88;letter-spacing:-6px;margin:18px 0}
+.hero:after{
+  content:"STREET CULTURE";
+  position:absolute;right:-30px;bottom:-25px;
+  font-size:clamp(70px,14vw,190px);
+  font-weight:1000;letter-spacing:-10px;
+  color:#ffffff08;white-space:nowrap;
+  pointer-events:none;
+}
+.hero-content{
+  padding:85px 0;max-width:760px;position:relative;z-index:1;
+}
+.eyebrow{
+  color:var(--lime);font-size:12px;font-weight:900;
+  letter-spacing:3px;text-transform:uppercase;
+}
+.hero h1{
+  font-size:clamp(48px,9vw,108px);
+  line-height:.9;letter-spacing:-6px;margin:22px 0;
+  font-weight:1000;
+}
 .hero h1 span{color:var(--lime)}
-.hero p{color:#ccc;line-height:1.7;max-width:440px}
+.hero p{color:#ccc;line-height:1.7;max-width:470px}
+.hero-sticker{
+  display:inline-block;background:var(--lime);color:#111;
+  padding:9px 14px;font-size:11px;font-weight:1000;
+  transform:rotate(-3deg);margin-top:12px;
+}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
   border:0;border-radius:6px;padding:14px 22px;
@@ -71,18 +100,23 @@ header{
 .btn-dark{background:#292929;color:white;border:1px solid #444}
 .btn-dark:hover{background:var(--lime);color:#111}
 .btn-small{padding:10px 14px;font-size:11px}
+
 .section{padding:65px 0}
 .section-heading{
-  display:flex;justify-content:space-between;align-items:end;
-  gap:20px;margin-bottom:28px;
+  display:flex;justify-content:space-between;
+  align-items:end;gap:20px;margin-bottom:28px;
 }
-.section-heading h2{font-size:clamp(28px,5vw,44px);margin:8px 0 0;letter-spacing:-2px}
+.section-heading h2{
+  font-size:clamp(28px,5vw,44px);
+  margin:8px 0 0;letter-spacing:-2px;
+}
 .section-heading p{color:var(--muted);font-size:13px}
 .toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:25px}
-.search-box{flex:1;min-width:220px;position:relative}
+.search-box{flex:1;min-width:220px}
 .search-box input{
   width:100%;padding:14px 16px;background:var(--panel);
-  border:1px solid var(--line);border-radius:7px;color:white;outline:none;
+  border:1px solid var(--line);border-radius:7px;
+  color:white;outline:none;
 }
 .search-box input:focus{border-color:var(--lime)}
 .filters{display:flex;gap:8px;flex-wrap:wrap}
@@ -91,20 +125,23 @@ header{
   background:var(--panel);color:#ccc;border-radius:6px;
   text-transform:uppercase;font-size:11px;font-weight:800;
 }
-.filter-btn.active,.filter-btn:hover{background:var(--lime);color:#111;border-color:var(--lime)}
-.products{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+.filter-btn.active,.filter-btn:hover{
+  background:var(--lime);color:#111;border-color:var(--lime);
 }
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .product-card{min-width:0;position:relative}
 .product-image{
   position:relative;overflow:hidden;background:#242424;
   border-radius:8px;aspect-ratio:3/4;cursor:pointer;
 }
-.product-image img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.product-image img{
+  width:100%;height:100%;object-fit:cover;transition:.4s;
+}
 .product-card:hover .product-image img{transform:scale(1.05)}
 .product-tag{
-  position:absolute;top:12px;left:12px;background:var(--lime);
-  color:#111;padding:6px 9px;font-size:10px;font-weight:900;
+  position:absolute;top:12px;left:12px;
+  background:var(--lime);color:#111;
+  padding:6px 9px;font-size:10px;font-weight:900;
 }
 .heart{
   position:absolute;top:10px;right:10px;width:38px;height:38px;
@@ -113,7 +150,7 @@ header{
 .heart.active{color:var(--lime)}
 .product-info{padding:13px 2px}
 .product-info h3{font-size:15px;margin:0 0 8px}
-.product-meta{display:flex;justify-content:space-between;align-items:center}
+.product-meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .price{font-weight:900;color:var(--lime)}
 .muted{color:var(--muted)}
 .empty-state{
@@ -128,28 +165,44 @@ header{
 .promo h2{font-size:clamp(25px,4vw,40px);margin:0 0 8px;letter-spacing:-2px}
 .promo p{margin:0}
 .promo .btn{background:#111;color:white}
-.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.benefit{background:var(--panel);padding:25px;border:1px solid var(--line);border-radius:8px}
+.benefits,.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.benefit,.review{
+  background:var(--panel);padding:25px;
+  border:1px solid var(--line);border-radius:8px;
+}
 .benefit strong{font-size:16px}
-.benefit p{font-size:13px;color:var(--muted);line-height:1.6}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.review{background:var(--panel);padding:22px;border:1px solid var(--line);border-radius:8px}
+.benefit p,.review p{
+  font-size:13px;color:var(--muted);line-height:1.6;
+}
 .stars{color:var(--lime);letter-spacing:3px}
-.review p{color:#ccc;font-size:14px;line-height:1.6}
+.review p{color:#ccc;font-size:14px}
 .review small{color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-size:13px}
+footer{
+  border-top:1px solid var(--line);padding:35px 0;
+  color:var(--muted);font-size:13px;
+}
 .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
-/* Product detail */
+/* Карточка товара */
 .detail-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:45px}
-.detail-main-image{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:9px;background:#222}
+.detail-main-image{
+  width:100%;aspect-ratio:4/5;object-fit:cover;
+  border-radius:9px;background:#222;
+}
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
-.gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent}
+.gallery img{
+  width:100%;aspect-ratio:1;object-fit:cover;
+  border-radius:6px;cursor:pointer;border:2px solid transparent;
+}
 .gallery img.selected{border-color:var(--lime)}
 .detail-info h1{font-size:clamp(30px,5vw,48px);letter-spacing:-2px;margin:10px 0}
 .detail-info .price{font-size:24px}
 .detail-info p{color:#bbb;line-height:1.7}
-.option-label{display:flex;justify-content:space-between;align-items:center;margin:25px 0 10px;font-size:12px;font-weight:900;text-transform:uppercase}
+.option-label{
+  display:flex;justify-content:space-between;align-items:center;
+  margin:25px 0 10px;font-size:12px;font-weight:900;
+  text-transform:uppercase;
+}
 .option-row{display:flex;gap:8px;flex-wrap:wrap}
 .option-btn{
   min-width:42px;padding:11px 14px;background:var(--panel);
@@ -157,11 +210,15 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-s
 }
 .option-btn.selected{border-color:var(--lime);color:var(--lime)}
 .quantity{display:flex;align-items:center;gap:15px}
-.quantity button{width:35px;height:35px;background:var(--panel2);color:white;border:1px solid var(--line);border-radius:5px}
+.quantity button{
+  width:35px;height:35px;background:var(--panel2);
+  color:white;border:1px solid var(--line);border-radius:5px;
+}
 .detail-actions{display:flex;gap:10px;margin-top:25px;flex-wrap:wrap}
 .back-link{display:inline-block;color:var(--lime);margin-bottom:25px;font-size:13px;font-weight:800}
+.detail-reviews{margin-top:35px;border-top:1px solid var(--line);padding-top:25px}
 
-/* Cart and modals */
+/* Окна и корзина */
 .overlay{
   display:none;position:fixed;inset:0;background:#000b;
   z-index:50;align-items:center;justify-content:center;padding:15px;
@@ -174,23 +231,34 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-s
 .modal-header{display:flex;justify-content:space-between;align-items:center;gap:15px}
 .modal-header h2{margin:0;font-size:25px}
 .close-btn{background:none;border:0;color:white;font-size:26px}
-.cart-item{display:grid;grid-template-columns:75px 1fr auto;gap:13px;padding:15px 0;border-bottom:1px solid var(--line);align-items:center}
+.cart-item{
+  display:grid;grid-template-columns:75px 1fr auto;
+  gap:13px;padding:15px 0;border-bottom:1px solid var(--line);
+  align-items:center;
+}
 .cart-item img{width:75px;height:85px;object-fit:cover;border-radius:5px}
 .cart-item p{font-size:12px;color:var(--muted);margin:5px 0}
 .remove-btn{background:none;border:0;color:#ff7777;font-size:12px}
-.cart-total{display:flex;justify-content:space-between;font-weight:900;font-size:18px;margin:20px 0}
+.cart-total{
+  display:flex;justify-content:space-between;
+  font-weight:900;font-size:18px;margin:20px 0;
+}
 .form-field{margin:14px 0}
 .form-field label{display:block;font-size:12px;color:#bbb;margin-bottom:7px}
 .form-field input,.form-field textarea{
-  width:100%;padding:13px;background:#252525;border:1px solid #444;
-  border-radius:6px;color:white;outline:none;
+  width:100%;padding:13px;background:#252525;
+  border:1px solid #444;border-radius:6px;color:white;outline:none;
 }
 .form-field input:focus,.form-field textarea:focus{border-color:var(--lime)}
-.notice{padding:12px;background:#292d16;border:1px solid #687d16;color:#e4f5a8;border-radius:6px;font-size:12px;line-height:1.5}
+.notice{
+  padding:12px;background:#292d16;border:1px solid #687d16;
+  color:#e4f5a8;border-radius:6px;font-size:12px;line-height:1.5;
+}
 .size-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13px}
-.size-table th,.size-table td{padding:12px 8px;text-align:center;border-bottom:1px solid var(--line)}
+.size-table th,.size-table td{
+  padding:12px 8px;text-align:center;border-bottom:1px solid var(--line);
+}
 .size-table th{color:var(--lime)}
-.detail-reviews{margin-top:35px;border-top:1px solid var(--line);padding-top:25px}
 .hidden{display:none!important}
 
 @media(max-width:900px){
@@ -221,13 +289,13 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-s
   <div class="container nav">
     <a class="logo" href="#" onclick="goHome();return false">ZABKA<span>.</span>STORE</a>
     <nav class="nav-links">
-      <a href="#catalog" onclick="goHome()">Shop</a>
-      <a href="#about" onclick="goHome()">About</a>
-      <a href="#reviews" onclick="goHome()">Reviews</a>
+      <a href="#catalog" onclick="goHome()">Каталог</a>
+      <a href="#about" onclick="goHome()">О нас</a>
+      <a href="#reviews" onclick="goHome()">Отзывы</a>
     </nav>
     <div class="nav-actions">
       <button class="icon-btn" onclick="showFavorites()">♡ <span class="count" id="favCount">0</span></button>
-      <button class="icon-btn" onclick="openCart()">Bag <span class="count" id="cartCount">0</span></button>
+      <button class="icon-btn" onclick="openCart()">Корзина <span class="count" id="cartCount">0</span></button>
     </div>
   </div>
 </header>
@@ -235,33 +303,34 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-s
 <main id="homePage">
   <section class="hero">
     <div class="container hero-content">
-      <div class="eyebrow">New urban collection</div>
-      <h1>OWN YOUR<br><span>VIBE.</span></h1>
-      <p>Streetwear made for your everyday moves. Oversized fits, clean details and confidence in every look.</p>
-      <a class="btn" href="#catalog">Explore collection</a>
+      <div class="eyebrow">НОВАЯ УЛИЧНАЯ КОЛЛЕКЦИЯ</div>
+      <h1>NO RULES.<br><span>JUST STREET.</span></h1>
+      <p>Одежда для тех, кто выбирает свой стиль. Свобода, характер и уличная культура в каждом образе.</p>
+      <a class="btn" href="#catalog">СМОТРЕТЬ КОЛЛЕКЦИЮ</a>
+      <div><span class="hero-sticker">ТВОЙ СТИЛЬ — ТВОИ ПРАВИЛА</span></div>
     </div>
   </section>
 
   <section class="section container" id="catalog">
     <div class="section-heading">
       <div>
-        <div class="eyebrow">Find your style</div>
-        <h2>SHOP THE DROP<span style="color:var(--lime)">.</span></h2>
+        <div class="eyebrow">НАЙДИ СВОЙ СТИЛЬ</div>
+        <h2>НОВАЯ КОЛЛЕКЦИЯ<span style="color:var(--lime)">.</span></h2>
       </div>
-      <p>Everyday essentials. Urban attitude.</p>
+      <p>Уличная одежда. Свой характер.</p>
     </div>
 
     <div class="toolbar">
       <div class="search-box">
-        <input id="searchInput" type="search" placeholder="Search products..." oninput="renderProducts()">
+        <input id="searchInput" type="search" placeholder="Поиск товаров..." oninput="renderProducts()">
       </div>
       <div class="filters">
-        <button class="filter-btn active" onclick="setCategory('all',this)">All</button>
-        <button class="filter-btn" onclick="setCategory('hoodies',this)">Hoodies</button>
-        <button class="filter-btn" onclick="setCategory('tshirts',this)">T-shirts</button>
-        <button class="filter-btn" onclick="setCategory('pants',this)">Pants</button>
-        <button class="filter-btn" onclick="setCategory('jackets',this)">Jackets</button>
-        <button class="filter-btn" onclick="setCategory('accessories',this)">Accessories</button>
+        <button class="filter-btn active" onclick="setCategory('all',this)">Все</button>
+        <button class="filter-btn" onclick="setCategory('hoodies',this)">Худи</button>
+        <button class="filter-btn" onclick="setCategory('tshirts',this)">Футболки</button>
+        <button class="filter-btn" onclick="setCategory('pants',this)">Брюки</button>
+        <button class="filter-btn" onclick="setCategory('jackets',this)">Куртки</button>
+        <button class="filter-btn" onclick="setCategory('accessories',this)">Аксессуары</button>
       </div>
     </div>
 
@@ -270,48 +339,51 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-s
 
   <section class="container section" id="favoritesSection" style="display:none">
     <div class="section-heading">
-      <div><div class="eyebrow">Your selection</div><h2>FAVOURITES<span style="color:var(--lime)">.</span></h2></div>
-      <button class="btn btn-dark btn-small" onclick="hideFavorites()">Back to shop</button>
+      <div><div class="eyebrow">ТВОЙ ВЫБОР</div><h2>ИЗБРАННОЕ<span style="color:var(--lime)">.</span></h2></div>
+      <button class="btn btn-dark btn-small" onclick="hideFavorites()">Вернуться в каталог</button>
     </div>
     <div class="products" id="favoriteGrid"></div>
   </section>
 
   <section class="container section">
     <div class="promo">
-      <div><h2>MAKE YOUR MOVE.</h2><p>Discover the pieces that match your everyday energy.</p></div>
-      <a href="#catalog" class="btn">Shop now</a>
+      <div>
+        <h2>СОЗДАЙ СВОЙ ОБРАЗ.</h2>
+        <p>Найди вещи, которые отражают твой характер.</p>
+      </div>
+      <a href="#catalog" class="btn">В каталог</a>
     </div>
   </section>
 
   <section class="section container" id="about">
     <div class="section-heading">
-      <div><div class="eyebrow">Why Zabka Store</div><h2>BUILT FOR EVERYDAY<span style="color:var(--lime)">.</span></h2></div>
+      <div><div class="eyebrow">ПОЧЕМУ ZABKA STORE</div><h2>СТИЛЬ НА КАЖДЫЙ ДЕНЬ<span style="color:var(--lime)">.</span></h2></div>
     </div>
     <div class="benefits">
-      <div class="benefit"><strong>01 / Urban style</strong><p>Modern streetwear silhouettes and relaxed oversized fits for everyday outfits.</p></div>
-      <div class="benefit"><strong>02 / Easy shopping</strong><p>Explore products, choose your size and colour, and add your favourites to the bag.</p></div>
-      <div class="benefit"><strong>03 / Your identity</strong><p>Build your own look. Keep it simple, keep it authentic, own your vibe.</p></div>
+      <div class="benefit"><strong>01 / Уличный стиль</strong><p>Современные силуэты, свободный крой и одежда для повседневных образов.</p></div>
+      <div class="benefit"><strong>02 / Удобный выбор</strong><p>Изучай товары, выбирай размер и цвет, добавляй понравившиеся вещи в корзину.</p></div>
+      <div class="benefit"><strong>03 / Твоя индивидуальность</strong><p>Создавай собственный образ. Не следуй правилам — создавай свои.</p></div>
     </div>
   </section>
 
   <section class="section container" id="reviews">
     <div class="section-heading">
-      <div><div class="eyebrow">Community feedback</div><h2>WHAT PEOPLE SAY<span style="color:var(--lime)">.</span></h2></div>
+      <div><div class="eyebrow">ОТЗЫВЫ</div><h2>ЧТО ГОВОРЯТ ПОКУПАТЕЛИ<span style="color:var(--lime)">.</span></h2></div>
     </div>
     <div class="reviews">
-      <div class="review"><div class="stars">★★★★★</div><p>“Love the oversized fit. Easy to style and comfortable for everyday wear.”</p><small>Alex M. — Demo review</small></div>
-      <div class="review"><div class="stars">★★★★★</div><p>“Clean design, great streetwear vibe. Definitely a piece I would wear often.”</p><small>Jordan K. — Demo review</small></div>
-      <div class="review"><div class="stars">★★★★☆</div><p>“Simple, relaxed and looks great with almost everything in my wardrobe.”</p><small>Sam T. — Demo review</small></div>
+      <div class="review"><div class="stars">★★★★★</div><p>«Нравится свободный крой. Удобно носить каждый день, легко сочетать с другой одеждой».</p><small>Алекс — демонстрационный отзыв</small></div>
+      <div class="review"><div class="stars">★★★★★</div><p>«Классный уличный стиль. Простые вещи, которые отлично смотрятся в образе».</p><small>Джордан — демонстрационный отзыв</small></div>
+      <div class="review"><div class="stars">★★★★☆</div><p>«Удобно, стильно и подходит практически ко всему в моём гардеробе».</p><small>Сэм — демонстрационный отзыв</small></div>
     </div>
-    <p class="muted" style="font-size:11px;margin-top:12px">The reviews above are sample content for this website demonstration.</p>
+    <p class="muted" style="font-size:11px;margin-top:12px">Отзывы приведены для демонстрации сайта.</p>
   </section>
 </main>
 
 <main id="detailPage" class="container section hidden">
-  <a href="#" class="back-link" onclick="goHome();return false">← BACK TO SHOP</a>
+  <a href="#" class="back-link" onclick="goHome();return false">← НАЗАД В КАТАЛОГ</a>
   <div class="detail-layout">
     <div>
-      <img id="detailImage" class="detail-main-image" src="" alt="Product photo">
+      <img id="detailImage" class="detail-main-image" src="" alt="Фото товара">
       <div class="gallery" id="detailGallery"></div>
     </div>
     <div class="detail-info">
@@ -320,16 +392,16 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-s
       <div class="price" id="detailPrice"></div>
       <p id="detailDescription"></p>
 
-      <div class="option-label"><span>Colour</span><span id="selectedColorLabel" class="muted"></span></div>
+      <div class="option-label"><span>Цвет</span><span id="selectedColorLabel" class="muted"></span></div>
       <div class="option-row" id="colorOptions"></div>
 
       <div class="option-label">
-        <span>Size</span>
-        <button class="filter-btn" onclick="openSizeGuide()">Size guide</button>
+        <span>Размер</span>
+        <button class="filter-btn" onclick="openSizeGuide()">Таблица размеров</button>
       </div>
       <div class="option-row" id="sizeOptions"></div>
 
-      <div class="option-label"><span>Quantity</span></div>
+      <div class="option-label"><span>Количество</span></div>
       <div class="quantity">
         <button onclick="changeQuantity(-1)">−</button>
         <strong id="detailQuantity">1</strong>
@@ -337,13 +409,13 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-s
       </div>
 
       <div class="detail-actions">
-        <button class="btn" onclick="addDetailToCart()">Add to bag</button>
-        <button class="btn btn-dark" id="detailFavorite" onclick="toggleDetailFavorite()">♡ Favourite</button>
+        <button class="btn" onclick="addDetailToCart()">В КОРЗИНУ</button>
+        <button class="btn btn-dark" id="detailFavorite" onclick="toggleDetailFavorite()">♡ В избранное</button>
       </div>
       <div class="detail-reviews">
-        <div class="eyebrow">Product feedback</div>
-        <h3>Customer impressions</h3>
-        <p>★★★★★ <span class="muted">Sample rating for demonstration</span></p>
+        <div class="eyebrow">О ТОВАРЕ</div>
+        <h3>Впечатления покупателей</h3>
+        <p>★★★★★ <span class="muted">Демонстрационный рейтинг</span></p>
       </div>
     </div>
   </div>
@@ -351,29 +423,29 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-s
 
 <footer>
   <div class="container footer-inner">
-    <div><div class="logo">ZABKA<span>.</span>STORE</div><p>Own your vibe. Wear your identity.</p></div>
-    <div>© 2026 ZABKA STORE — Demo website concept</div>
+    <div><div class="logo">ZABKA<span>.</span>STORE</div><p>NO RULES. JUST STREET.</p></div>
+    <div>© 2026 ZABKA STORE — демонстрационная версия сайта</div>
   </div>
 </footer>
 
-<!-- Cart modal -->
+<!-- Корзина -->
 <div class="overlay" id="cartOverlay" onclick="outsideClose(event,'cartOverlay')">
   <div class="modal">
-    <div class="modal-header"><h2>YOUR BAG</h2><button class="close-btn" onclick="closeModal('cartOverlay')">×</button></div>
+    <div class="modal-header"><h2>ТВОЯ КОРЗИНА</h2><button class="close-btn" onclick="closeModal('cartOverlay')">×</button></div>
     <div id="cartItems"></div>
-    <div class="cart-total"><span>Total</span><span id="cartTotal">€0.00</span></div>
-    <button class="btn" style="width:100%" onclick="openCheckout()">Continue to checkout</button>
-    <p class="muted" style="font-size:11px">Demo store: no real payment is processed.</p>
+    <div class="cart-total"><span>Итого</span><span id="cartTotal">0,00 BYN</span></div>
+    <button class="btn" style="width:100%" onclick="openCheckout()">Перейти к оформлению</button>
+    <p class="muted" style="font-size:11px">Демонстрационный магазин: оплата не производится.</p>
   </div>
 </div>
 
-<!-- Size guide modal -->
+<!-- Таблица размеров -->
 <div class="overlay" id="sizeOverlay" onclick="outsideClose(event,'sizeOverlay')">
   <div class="modal">
-    <div class="modal-header"><h2>SIZE GUIDE</h2><button class="close-btn" onclick="closeModal('sizeOverlay')">×</button></div>
-    <p class="muted">Illustrative size chart for the website demo. Actual measurements must be confirmed by the store owner.</p>
+    <div class="modal-header"><h2>ТАБЛИЦА РАЗМЕРОВ</h2><button class="close-btn" onclick="closeModal('sizeOverlay')">×</button></div>
+    <p class="muted">Примерная таблица для демонстрации. Фактические параметры необходимо уточнить у владельца магазина.</p>
     <table class="size-table">
-      <thead><tr><th>Size</th><th>Chest (cm)</th><th>Waist (cm)</th><th>Length (cm)</th></tr></thead>
+      <thead><tr><th>Размер</th><th>Грудь (см)</th><th>Талия (см)</th><th>Длина (см)</th></tr></thead>
       <tbody>
         <tr><td>S</td><td>88–96</td><td>72–80</td><td>66</td></tr>
         <tr><td>M</td><td>96–104</td><td>80–88</td><td>69</td></tr>
@@ -382,21 +454,21 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-s
         <tr><td>XXL</td><td>120–128</td><td>104–112</td><td>78</td></tr>
       </tbody>
     </table>
-    <button class="btn" onclick="closeModal('sizeOverlay')">Got it</button>
+    <button class="btn" onclick="closeModal('sizeOverlay')">Понятно</button>
   </div>
 </div>
 
-<!-- Demo checkout modal -->
+<!-- Демонстрационное оформление заказа -->
 <div class="overlay" id="checkoutOverlay" onclick="outsideClose(event,'checkoutOverlay')">
   <div class="modal">
-    <div class="modal-header"><h2>CHECKOUT</h2><button class="close-btn" onclick="closeModal('checkoutOverlay')">×</button></div>
-    <div class="notice">DEMO ONLY: Do not enter real personal information. This form does not send or save your details and does not process payment.</div>
+    <div class="modal-header"><h2>ОФОРМЛЕНИЕ ЗАКАЗА</h2><button class="close-btn" onclick="closeModal('checkoutOverlay')">×</button></div>
+    <div class="notice">ТОЛЬКО ДЕМО: не вводи настоящие личные данные. Форма не отправляет и не сохраняет информацию и не принимает оплату.</div>
     <form id="checkoutForm">
-      <div class="form-field"><label for="demoName">Name (test only)</label><input id="demoName" placeholder="Demo Customer" required></div>
-      <div class="form-field"><label for="demoEmail">Email (test only)</label><input id="demoEmail" type="email" placeholder="demo@example.com" required></div>
-      <div class="form-field"><label for="demoAddress">Delivery address (test only)</label><textarea id="demoAddress" rows="2" placeholder="Demo address" required></textarea></div>
-      <div class="cart-total"><span>Demo total</span><span id="checkoutTotal">€0.00</span></div>
-      <button class="btn" style="width:100%" type="submit">Place demo order</button>
+      <div class="form-field"><label for="demoName">Имя (тест)</label><input id="demoName" placeholder="Имя покупателя" required></div>
+      <div class="form-field"><label for="demoEmail">Электронная почта (тест)</label><input id="demoEmail" type="email" placeholder="demo@example.com" required></div>
+      <div class="form-field"><label for="demoAddress">Адрес доставки (тест)</label><textarea id="demoAddress" rows="2" placeholder="Тестовый адрес" required></textarea></div>
+      <div class="cart-total"><span>Сумма заказа</span><span id="checkoutTotal">0,00 BYN</span></div>
+      <button class="btn" style="width:100%" type="submit">Оформить тестовый заказ</button>
     </form>
     <div id="checkoutSuccess" class="notice hidden" style="margin-top:15px"></div>
   </div>
@@ -405,9 +477,9 @@ footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-s
 <script>
 const products = [
   {
-    id:"hoodie",name:"Essential Oversized Hoodie",category:"hoodies",price:49.90,tag:"BESTSELLER",
-    colors:["Black","Grey","White"],sizes:["S","M","L","XL","XXL"],
-    description:"A relaxed oversized hoodie designed for everyday comfort and effortless streetwear styling.",
+    id:"hoodie",name:"Оверсайз худи Essential",category:"hoodies",categoryName:"Худи",price:164.63,tag:"ХИТ ПРОДАЖ",
+    colors:["Чёрный","Серый","Белый"],sizes:["S","M","L","XL","XXL"],
+    description:"Свободное худи для повседневного комфорта и уличного стиля.",
     images:[
       "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85",
@@ -416,9 +488,9 @@ const products = [
     ]
   },
   {
-    id:"tee",name:"Basic Oversized Tee",category:"tshirts",price:24.90,tag:"ESSENTIAL",
-    colors:["White","Black","Grey"],sizes:["S","M","L","XL","XXL"],
-    description:"A clean everyday oversized T-shirt with a relaxed silhouette.",
+    id:"tee",name:"Базовая оверсайз футболка",category:"tshirts",categoryName:"Футболки",price:82.15,tag:"БАЗА",
+    colors:["Белый","Чёрный","Серый"],sizes:["S","M","L","XL","XXL"],
+    description:"Удобная базовая футболка свободного кроя на каждый день.",
     images:[
       "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=900&q=85",
@@ -427,9 +499,9 @@ const products = [
     ]
   },
   {
-    id:"cargo",name:"Urban Cargo Pants",category:"pants",price:44.90,tag:"TRENDING",
-    colors:["Black","Olive","Grey"],sizes:["S","M","L","XL"],
-    description:"Utility-inspired cargo pants with a relaxed streetwear fit.",
+    id:"cargo",name:"Карго брюки Urban",category:"pants",categoryName:"Брюки",price:148.13,tag:"ТРЕНД",
+    colors:["Чёрный","Оливковый","Серый"],sizes:["S","M","L","XL"],
+    description:"Свободные брюки карго в уличном стиле с практичными деталями.",
     images:[
       "https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=900&q=85",
@@ -438,9 +510,9 @@ const products = [
     ]
   },
   {
-    id:"cap",name:"Classic Urban Cap",category:"accessories",price:19.90,tag:"NEW",
-    colors:["Black","White","Beige"],sizes:["One Size"],
-    description:"A versatile cap that completes your everyday urban look.",
+    id:"cap",name:"Классическая кепка Urban",category:"accessories",categoryName:"Аксессуары",price:65.65,tag:"НОВИНКА",
+    colors:["Чёрный","Белый","Бежевый"],sizes:["Единый"],
+    description:"Универсальная кепка, которая дополнит повседневный городской образ.",
     images:[
       "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=900&q=85",
@@ -449,9 +521,9 @@ const products = [
     ]
   },
   {
-    id:"jacket",name:"Urban Street Jacket",category:"jackets",price:69.90,tag:"LIMITED",
-    colors:["Black","Brown","Grey"],sizes:["S","M","L","XL"],
-    description:"A statement street jacket made for layering and everyday outfits.",
+    id:"jacket",name:"Уличная куртка Street",category:"jackets",categoryName:"Куртки",price:230.61,tag:"ЛИМИТКА",
+    colors:["Чёрный","Коричневый","Серый"],sizes:["S","M","L","XL"],
+    description:"Выразительная куртка для многослойных образов и повседневной носки.",
     images:[
       "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=900&q=85",
@@ -460,9 +532,9 @@ const products = [
     ]
   },
   {
-    id:"hoodie2",name:"Daily Comfort Hoodie",category:"hoodies",price:54.90,tag:"POPULAR",
-    colors:["Grey","Black","Cream"],sizes:["S","M","L","XL","XXL"],
-    description:"A comfortable hoodie with a minimal look and easy-to-wear shape.",
+    id:"hoodie2",name:"Худи Daily Comfort",category:"hoodies",categoryName:"Худи",price:181.13,tag:"ПОПУЛЯРНОЕ",
+    colors:["Серый","Чёрный","Кремовый"],sizes:["S","M","L","XL","XXL"],
+    description:"Комфортное худи с лаконичным дизайном и удобным свободным силуэтом.",
     images:[
       "https://images.unsplash.com/photo-1578681994506-b8f463449011?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85",
@@ -471,9 +543,9 @@ const products = [
     ]
   },
   {
-    id:"graphic",name:"Street Graphic Tee",category:"tshirts",price:29.90,tag:"NEW DROP",
-    colors:["White","Black","Sand"],sizes:["S","M","L","XL"],
-    description:"A graphic-inspired T-shirt for a bold and relaxed everyday outfit.",
+    id:"graphic",name:"Футболка Street Graphic",category:"tshirts",categoryName:"Футболки",price:98.65,tag:"НОВЫЙ ДРОП",
+    colors:["Белый","Чёрный","Песочный"],sizes:["S","M","L","XL"],
+    description:"Футболка с акцентом на уличный стиль и свободную посадку.",
     images:[
       "https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85",
@@ -482,9 +554,9 @@ const products = [
     ]
   },
   {
-    id:"cap2",name:"Everyday Cap",category:"accessories",price:22.90,tag:"ESSENTIAL",
-    colors:["Black","Navy","Beige"],sizes:["One Size"],
-    description:"A simple everyday accessory to finish your streetwear combination.",
+    id:"cap2",name:"Кепка Everyday",category:"accessories",categoryName:"Аксессуары",price:75.55,tag:"БАЗА",
+    colors:["Чёрный","Тёмно-синий","Бежевый"],sizes:["Единый"],
+    description:"Универсальный аксессуар для завершения повседневного образа.",
     images:[
       "https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=900&q=85",
       "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=900&q=85",
@@ -502,7 +574,9 @@ let quantity=1;
 let cart=[];
 let favorites=JSON.parse(localStorage.getItem("zabkaFavorites")||"[]");
 
-function money(value){return "€"+value.toFixed(2)}
+function money(value){
+  return value.toFixed(2).replace(".",",")+" BYN";
+}
 function getProduct(id){return products.find(p=>p.id===id)}
 function saveFavorites(){
   localStorage.setItem("zabkaFavorites",JSON.stringify(favorites));
@@ -514,9 +588,7 @@ function updateCounts(){
 }
 function setCategory(value,button){
   category=value;
-  document.querySelectorAll(".filter-btn").forEach(b=>{
-    if(b.closest(".filters"))b.classList.remove("active");
-  });
+  document.querySelectorAll(".filters .filter-btn").forEach(b=>b.classList.remove("active"));
   button.classList.add("active");
   renderProducts();
 }
@@ -527,12 +599,15 @@ function productCard(p){
     <div class="product-image" onclick="openProduct('${p.id}')">
       <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
       <span class="product-tag">${p.tag}</span>
-      <button class="heart ${liked?"active":""}" aria-label="Add to favourites"
+      <button class="heart ${liked?"active":""}" aria-label="Добавить в избранное"
         onclick="event.stopPropagation();toggleFavorite('${p.id}')">${liked?"♥":"♡"}</button>
     </div>
     <div class="product-info" onclick="openProduct('${p.id}')" style="cursor:pointer">
       <h3>${p.name}</h3>
-      <div class="product-meta"><span class="muted">${p.category}</span><span class="price">${money(p.price)}</span></div>
+      <div class="product-meta">
+        <span class="muted">${p.categoryName}</span>
+        <span class="price">${money(p.price)}</span>
+      </div>
     </div>
   </article>`;
 }
@@ -540,11 +615,11 @@ function renderProducts(){
   const term=document.getElementById("searchInput").value.trim().toLowerCase();
   const filtered=products.filter(p=>
     (category==="all"||p.category===category) &&
-    (p.name.toLowerCase().includes(term)||p.category.toLowerCase().includes(term))
+    (p.name.toLowerCase().includes(term)||p.categoryName.toLowerCase().includes(term))
   );
   document.getElementById("productGrid").innerHTML=filtered.length
     ?filtered.map(productCard).join("")
-    :'<div class="empty-state">No products found. Try another search.</div>';
+    :'<div class="empty-state">Товары не найдены. Попробуй другой запрос.</div>';
 }
 function toggleFavorite(id){
   favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];
@@ -558,12 +633,14 @@ function showFavorites(){
   renderFavoriteGrid();
   document.getElementById("favoritesSection").scrollIntoView({behavior:"smooth"});
 }
-function hideFavorites(){document.getElementById("favoritesSection").style.display="none"}
+function hideFavorites(){
+  document.getElementById("favoritesSection").style.display="none";
+}
 function renderFavoriteGrid(){
   const items=products.filter(p=>favorites.includes(p.id));
   document.getElementById("favoriteGrid").innerHTML=items.length
     ?items.map(productCard).join("")
-    :'<div class="empty-state">You have no favourite products yet. Tap the heart on a product to save it.</div>';
+    :'<div class="empty-state">Пока нет избранных товаров. Нажми на сердечко, чтобы сохранить товар.</div>';
 }
 function openProduct(id){
   currentProduct=getProduct(id);
@@ -573,14 +650,14 @@ function openProduct(id){
   quantity=1;
   document.getElementById("homePage").classList.add("hidden");
   document.getElementById("detailPage").classList.remove("hidden");
-  document.getElementById("detailCategory").textContent=currentProduct.category;
+  document.getElementById("detailCategory").textContent=currentProduct.categoryName;
   document.getElementById("detailName").textContent=currentProduct.name;
   document.getElementById("detailPrice").textContent=money(currentProduct.price);
   document.getElementById("detailDescription").textContent=currentProduct.description;
   document.getElementById("detailQuantity").textContent=quantity;
   document.getElementById("detailImage").src=currentProduct.images[0];
   document.getElementById("detailGallery").innerHTML=currentProduct.images.map((src,i)=>
-    `<img src="${src}" class="${i===0?"selected":""}" onclick="changeGalleryImage('${src}',this)" alt="Product view ${i+1}">`
+    `<img src="${src}" class="${i===0?"selected":""}" onclick="changeGalleryImage('${src}',this)" alt="Фото товара ${i+1}">`
   ).join("");
   renderOptions();
   updateDetailFavorite();
@@ -610,7 +687,7 @@ function changeQuantity(n){
 function updateDetailFavorite(){
   const liked=favorites.includes(currentProduct.id);
   const btn=document.getElementById("detailFavorite");
-  btn.textContent=liked?"♥ Saved":"♡ Favourite";
+  btn.textContent=liked?"♥ В избранном":"♡ В избранное";
   btn.classList.toggle("active",liked);
 }
 function toggleDetailFavorite(){toggleFavorite(currentProduct.id)}
@@ -629,14 +706,18 @@ function openCart(){
 function renderCart(){
   const box=document.getElementById("cartItems");
   if(!cart.length){
-    box.innerHTML='<div class="empty-state">Your bag is empty.</div>';
+    box.innerHTML='<div class="empty-state">Твоя корзина пока пуста.</div>';
   }else{
     box.innerHTML=cart.map((item,index)=>{
       const p=getProduct(item.id);
       return `<div class="cart-item">
         <img src="${p.images[0]}" alt="${p.name}">
-        <div><strong>${p.name}</strong><p>${item.color} / ${item.size} · Qty: ${item.qty}</p><strong class="price">${money(p.price*item.qty)}</strong></div>
-        <button class="remove-btn" onclick="removeCartItem(${index})">Remove</button>
+        <div>
+          <strong>${p.name}</strong>
+          <p>${item.color} / ${item.size} · Количество: ${item.qty}</p>
+          <strong class="price">${money(p.price*item.qty)}</strong>
+        </div>
+        <button class="remove-btn" onclick="removeCartItem(${index})">Удалить</button>
       </div>`;
     }).join("");
   }
@@ -648,7 +729,7 @@ function renderCart(){
 function removeCartItem(index){cart.splice(index,1);renderCart()}
 function openSizeGuide(){document.getElementById("sizeOverlay").classList.add("show")}
 function openCheckout(){
-  if(!cart.length){alert("Your bag is empty.");return}
+  if(!cart.length){alert("Корзина пуста.");return}
   renderCart();
   closeModal("cartOverlay");
   document.getElementById("checkoutSuccess").classList.add("hidden");
@@ -660,12 +741,14 @@ document.getElementById("checkoutForm").addEventListener("submit",function(event
   document.getElementById("checkoutForm").classList.add("hidden");
   const success=document.getElementById("checkoutSuccess");
   success.classList.remove("hidden");
-  success.innerHTML="<strong>Demo order completed!</strong><br>This is only a website preview. No order was sent, no payment was taken and your details were not saved.";
+  success.innerHTML="<strong>Демонстрационный заказ оформлен!</strong><br>Это только предварительный просмотр сайта. Заказ не отправлен, оплата не произведена, данные не сохранены.";
   cart=[];
   updateCounts();
 });
 function closeModal(id){document.getElementById(id).classList.remove("show")}
-function outsideClose(event,id){if(event.target.id===id)closeModal(id)}
+function outsideClose(event,id){
+  if(event.target.id===id)closeModal(id);
+}
 function goHome(){
   document.getElementById("detailPage").classList.add("hidden");
   document.getElementById("homePage").classList.remove("hidden");
@@ -688,14 +771,14 @@ function openProductFromHistory(id){
   quantity=1;
   document.getElementById("homePage").classList.add("hidden");
   document.getElementById("detailPage").classList.remove("hidden");
-  document.getElementById("detailCategory").textContent=currentProduct.category;
+  document.getElementById("detailCategory").textContent=currentProduct.categoryName;
   document.getElementById("detailName").textContent=currentProduct.name;
   document.getElementById("detailPrice").textContent=money(currentProduct.price);
   document.getElementById("detailDescription").textContent=currentProduct.description;
   document.getElementById("detailQuantity").textContent="1";
   document.getElementById("detailImage").src=currentProduct.images[0];
   document.getElementById("detailGallery").innerHTML=currentProduct.images.map((src,i)=>
-    `<img src="${src}" class="${i===0?"selected":""}" onclick="changeGalleryImage('${src}',this)" alt="Product view ${i+1}">`
+    `<img src="${src}" class="${i===0?"selected":""}" onclick="changeGalleryImage('${src}',this)" alt="Фото товара ${i+1}">`
   ).join("");
   renderOptions();
   updateDetailFavorite();
@@ -709,3 +792,5 @@ if(initialProduct&&getProduct(initialProduct))openProductFromHistory(initialProd
 </script>
 </body>
 </html>
+
+
